@@ -1,0 +1,58 @@
+# Basic .gitattributes for a MATLAB repo.
+# This template includes Simulink and MuPAD extensions, in addition
+# to the MATLAB extensions.
+
+
+# Source files
+# ============
+*.m text
+*.mu text
+
+# Caution: *.m also matches Mathematica packages.
+
+
+# Binary files
+# ============
+*.doc filter=lfs diff=lfs merge=lfs -text 
+*.docm filter=lfs diff=lfs merge=lfs -text 
+*.docx filter=lfs diff=lfs merge=lfs -text
+
+*.exe filter=lfs diff=lfs merge=lfs -text
+
+*.fig filter=lfs diff=lfs merge=lfs -text
+
+*.jpg filter=lfs diff=lfs merge=lfs -text
+
+*.mat filter=lfs diff=lfs merge=lfs -text
+*.mdl filter=lfs diff=lfs merge=lfs -text
+*.mdlp filter=lfs diff=lfs merge=lfs -text
+*.mex filter=lfs diff=lfs merge=lfs -text
+*.mex* filter=lfs diff=lfs merge=lfs -text
+*.mexa64 filter=lfs diff=lfs merge=lfs -text
+*.mexmaci64 filter=lfs diff=lfs merge=lfs -text
+*.mexw64 filter=lfs diff=lfs merge=lfs -text
+*.mlappinstall filter=lfs diff=lfs merge=lfs -text
+*.mlpkginstall filter=lfs diff=lfs merge=lfs -text
+*.mltbx filter=lfs diff=lfs merge=lfs -text
+*.mlx filter=lfs diff=lfs merge=lfs -text
+*.mn filter=lfs diff=lfs merge=lfs -text
+
+*.p filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+
+*.sldd filter=lfs diff=lfs merge=lfs -text
+*.slx filter=lfs diff=lfs merge=lfs -text
+*.slxp filter=lfs diff=lfs merge=lfs -text
+
+*.xls filter=lfs diff=lfs merge=lfs -text
+*.xlsm filter=lfs diff=lfs merge=lfs -text
+*.xlsx filter=lfs diff=lfs merge=lfs -text
+
+*.vsdx filter=lfs diff=lfs merge=lfs -text
+
+
+# Enables EOL conversion/normalization
+*.h text
+*.c text
+*.cpp text

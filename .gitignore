@@ -1,0 +1,7 @@
+*.zip
+*.asv
+*.bak
+*.autosave
+*.log
+slprj/
+SignalDefinition_*
