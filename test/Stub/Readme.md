@@ -1,1 +1,0 @@
-This folder contains supporting files/models specific to SWC required for SWC testing using BTC or SDV.
