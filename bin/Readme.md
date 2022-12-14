@@ -1,2 +1,3 @@
-Binary/Object files generated for the SWC. (Optional)
+Binary/Object files generated for the SWC. (Optional).
+
 
