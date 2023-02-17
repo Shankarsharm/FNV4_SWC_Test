@@ -10,7 +10,7 @@ do
   branch=$(yq ".[$i].Branch" manifest.yml)
   Sync_dir=$(yq ".[$i].Sync_dir" manifest.yml)
   echo "$repo"
-  cd "$3/.."
+  cd "$3"
   pwd
   ls
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
