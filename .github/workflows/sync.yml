@@ -46,4 +46,4 @@ jobs:
           ls
           pwd
           chmod +x sync.sh
-          ./sync.sh ${{ secrets.ACTIONS_KEY }} FNV4_SWC_Test
+          ./sync.sh ${{ secrets.ACTIONS_KEY }} FNV4_SWC_Test $GITHUB_WORKSPACE
