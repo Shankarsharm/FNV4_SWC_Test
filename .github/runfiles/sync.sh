@@ -10,7 +10,7 @@ do
   branch=$(yq ".[$i].Branch" manifest.yml)
   Sync_dir=$(yq ".[$i].Sync_dir" manifest.yml)
   echo "$repo"
-  git clone -b "$branch" "https://Shankarsharm:$1@$repo"
+  git clone -b $branch https://Shankarsharm:"$1"@"$repo"
   if [[ $Sync_dir == "all" ]]
   then
     echo "yes copy everything"
