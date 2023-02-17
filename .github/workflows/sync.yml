@@ -33,4 +33,4 @@ jobs:
           ls
           pwd
           chmod +x sync.sh
-          ./sync.sh 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 FNV4_SWC_Test
+          ./sync.sh ${{ secrets.ACTIONS_KEY }} FNV4_SWC_Test
