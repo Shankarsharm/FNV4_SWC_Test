@@ -17,6 +17,11 @@ jobs:
           wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
           chmod a+x /usr/local/bin/yq
           yq --version
+      - name: clone repo
+        run: |
+          echo ${{ github.repository }}
+          echo ${{ secrets.ACTIONS_KEY }}
+          git clone -b Jenkins https://Shankarsharm:${{ secrets.ACTIONS_KEY }}@github.com/Shankarsharm/FNV4_Comp1st.git
       - name: Run Shell Script
         id: capture
         run: |
