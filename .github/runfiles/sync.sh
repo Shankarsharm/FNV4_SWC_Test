@@ -38,7 +38,7 @@ do
       cd "$3"/../"$2"
       ls 
       pwd
-      cp -R "$file" "$name"/"$2"
+      cp -R "$file" "$3"/../"$name"/"$2"
     done
       cd "$3"/../"$name"
       ls 
