@@ -20,7 +20,7 @@ jobs:
       - name: Run Shell Script
         id: capture
         run: |
-          cd FNV4_SWC_Test/.github/runfiles
+          cd ./.github/runfiles
           ls
           pwd
           chmod +x sync.sh
