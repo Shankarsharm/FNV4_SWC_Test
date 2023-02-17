@@ -20,8 +20,6 @@ jobs:
       - name: Run Shell Script
         id: capture
         run: |
-          git config --global user.email "shankar.sharma@gmail.com"
-          git config --global user.name "Shankarsharm"
           cd ./.github/runfiles
           ls
           pwd
