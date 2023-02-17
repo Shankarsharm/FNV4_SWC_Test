@@ -19,7 +19,8 @@ jobs:
           yq --version
       - name: clone repo
         run: |
-          echo ${{ github.repository }}
+          echo ${{ github.action_path }}
+          echo ${{ github.action_repository }}
           echo ${{ secrets.ACTIONS_KEY }}
           git clone -b Jenkins https://Shankarsharm:${{ secrets.ACTIONS_KEY }}@github.com/Shankarsharm/FNV4_Comp1st.git
           ls
