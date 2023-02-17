@@ -11,16 +11,19 @@ do
   Sync_dir=$(yq ".[$i].Sync_dir" manifest.yml)
   echo "$repo"
   cd "$3/.."
+  pwd
+  ls
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
   if [[ $Sync_dir == "all" ]]
   then
     echo "yes copy everything"
     echo "$name"
-    cd "$3"/../"$2"
+    cd "$3"/"$2"
     ls 
     pwd
     rm -rf .git
     cp -R . "$name"/"$2"
+    cd "$3"/"$name"
     git add .
     git commit -m "Has added files"
     git push https://Shankarsharm:"$1"@"$repo"
@@ -32,11 +35,12 @@ do
     do
       file=$(echo $Sync_dir | cut -d "," -f"$j")
       echo "$file"
-      cd "$3"/../"$2"
+      cd "$3"/"$2"
       ls 
       pwd
-      cp "$file" "$name"/"$2"
+      cp -R "$file" "$name"/"$2"
     done
+      cd "$3"/"$name"
       git add .
       git commit -m "Added files"
       git push https://Shankarsharm:"$1"@"$repo"
