@@ -41,7 +41,11 @@ do
       cp -R "$file" "$name"/"$2"
     done
       cd "$3"/../"$name"
+      ls 
+      pwd
+      git status
       git add .
+      git status
       git commit -m "Added files"
       git push https://Shankarsharm:"$1"@"$repo"
   fi
