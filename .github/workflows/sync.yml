@@ -1,0 +1,29 @@
+name: Syncing the repos
+on:
+  push:
+    branches:
+      - 'Jenkins'
+  #  paths:  
+  #   - 'sync/repo/Readme.md'
+  workflow_dispatch:
+jobs:
+  Sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install yq
+        run: |
+          wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          chmod a+x /usr/local/bin/yq
+          yq --version
+      - name: Run Shell Script
+        id: capture
+        run: |
+          
+      
+      - name: Upload the Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact_files
+          path: .github
