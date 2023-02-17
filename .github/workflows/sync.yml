@@ -24,4 +24,4 @@ jobs:
           ls
           pwd
           chmod +x sync.sh
-          ./sync.sh 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 FNV4_SWC_Test
+          ./sync.sh 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 FNV4_SWC_Test
