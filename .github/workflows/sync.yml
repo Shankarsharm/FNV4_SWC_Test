@@ -20,6 +20,7 @@ jobs:
       - name: clone repo
         run: |
           pwd
+          echo $GITHUB_WORKSPACE
           echo ${{ github.repository }}
           echo ${{ github.action_path }}
           cd ${{ github.action_repository }}
