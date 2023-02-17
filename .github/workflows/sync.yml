@@ -24,6 +24,10 @@ jobs:
           echo ${{ github.action_path }}
           cd ${{ github.action_repository }}
           ls
+          cd work
+          ls
+          cd FNV4_SWC_Test
+          ls
           echo ${{ secrets.ACTIONS_KEY }}
           git clone -b Jenkins https://Shankarsharm:${{ secrets.ACTIONS_KEY }}@github.com/Shankarsharm/FNV4_Comp1st.git
           ls
