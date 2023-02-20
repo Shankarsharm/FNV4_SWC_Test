@@ -15,6 +15,7 @@ do
   pwd
   ls
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
+  ls 
   cd $name
   ls
   if [[ ! -d "$2" ]]
