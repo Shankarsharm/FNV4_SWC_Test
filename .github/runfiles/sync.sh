@@ -4,6 +4,7 @@ len=$(yq "length" manifest.yml)
 
 for ((i=0; i<${len}; i++))
 do
+  cd "$3"/.github/runfiles
   #Collecting Values from Yaml file
   repo=$(yq ".[$i].Repository" manifest.yml)
   name=$(yq ".[$i].Name" manifest.yml)
@@ -14,15 +15,20 @@ do
   pwd
   ls
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
+  cd "$3"/../"$2"
+  if [[ ! -d "$name"/"$2" ]]
+  then
+      mkdir "$name"/"$2"
+  fi
   if [[ $Sync_dir == "all" ]]
   then
     echo "yes copy everything"
     echo "$name"
-    cd "$3"/../"$2"
     ls 
     pwd
     rm -rf .git
     cp -R . "$name"/"$2"
+    echo $?
     cd "$3"/../"$name"
     git add .
     git commit -m "Has added files"
@@ -35,10 +41,10 @@ do
     do
       file=$(echo $Sync_dir | cut -d "," -f"$j")
       echo "$file"
-      cd "$3"/../"$2"
       ls 
       pwd
       cp -R "$file" "$3"/../"$name"/"$2"
+      echo $?
       echo "Copied specific Directories"
     done
       cd "$3"/../"$name"
