@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git config --global user.email "Shankarsharma@gmail.com"
+git config --global user.name "Shankar Sharma"
 len=$(yq "length" manifest.yml)
 path="/home/runner/work/"
 echo $path
@@ -36,7 +38,7 @@ do
     cp -R . "$path"/"$name"/"$2"/
     echo $?
     cd "$path"/"$name"/
-    git add *
+    git add .
     git commit -m "Has added files"
     git push https://Shankarsharm:"$1"@"$repo"
 
@@ -64,7 +66,7 @@ do
       cd "$path"/"$name"/
       ls 
       pwd
-      git add *
+      git add .
       git status
       git commit -m "Added files"
       git push https://Shankarsharm:"$1"@"$repo"
