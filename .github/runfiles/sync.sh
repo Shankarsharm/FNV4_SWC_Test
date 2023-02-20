@@ -15,21 +15,25 @@ do
   pwd
   ls
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
-  cd "$3"/../"$2"
-  if [[ ! -d "$name"/"$2" ]]
+  cd $name
+  ls
+  if [[ ! -d "$2" ]]
   then
-      mkdir "$name"/"$2"
+      mkdir "$2"
+  else
+    echo "Directory already present"
   fi
   if [[ $Sync_dir == "all" ]]
   then
     echo "yes copy everything"
-    echo "$name"
+    cd "$3"
     ls 
     pwd
-    rm -rf .git
-    cp -R . "$name"/"$2"
+    rm -rf .git*
+    ls
+    cp -R . "$3"/../"$name"/
     echo $?
-    cd "$3"/../"$name"
+    cd "$3"/../"$name"/
     git add .
     git commit -m "Has added files"
     git push https://Shankarsharm:"$1"@"$repo"
@@ -41,13 +45,14 @@ do
     do
       file=$(echo $Sync_dir | cut -d "," -f"$j")
       echo "$file"
+      cd "$3"
       ls 
       pwd
-      cp -R "$file" "$3"/../"$name"/"$2"
+      cp -R "$file" "$3"/../"$name"/
       echo $?
       echo "Copied specific Directories"
     done
-      cd "$3"/../"$name"
+      cd "$3"/../"$name"/
       ls 
       pwd
       git status
