@@ -22,6 +22,7 @@ do
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
  # ls 
   cd $name
+  rm -rf $2
  # ls
   if [[ ! -d "$2" ]]
   then
