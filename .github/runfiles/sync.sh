@@ -13,14 +13,14 @@ do
   name=$(yq ".[$i].Name" manifest.yml)
   branch=$(yq ".[$i].Branch" manifest.yml)
   Sync_dir=$(yq ".[$i].Sync_dir" manifest.yml)
-  echo "$repo"
+ # echo "$repo"
   cd "$path"
-  pwd
-  ls
+ # pwd
+ # ls
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
-  ls 
+ # ls 
   cd $name
-  ls
+ # ls
   if [[ ! -d "$2" ]]
   then
       mkdir "$2"
@@ -31,17 +31,16 @@ do
   then
     echo "yes copy everything"
     cd "$3"
-    ls 
-    pwd
-    rm -rf .git* FNV4_*
-    ls
+   # ls 
+   # pwd
+    rm -rf .git*
+   # ls
     cp -R . "$path"/"$name"/"$2"/
     echo $?
     cd "$path"/"$name"/
     git add .
     git commit -m "Has added files"
     git push https://Shankarsharm:"$1"@"$repo"
-
   else
     echo "Need to copy specific Directories"
     dir=$(echo $Sync_dir | tr -cd , | wc -c)
@@ -50,26 +49,26 @@ do
       file=$(echo $Sync_dir | cut -d "," -f"$j")
       echo "$file"
       cd "$3"
-      pwd
+     # pwd
       cp -R "$file" "$path"/"$name"/"$2"/
       echo $?
-      ls
-      pwd
-      cd "$path"/"$name"/"$2"/
-      ls
-      pwd
-      cd $file
-      cat Readme.md
-      ls
+     # ls
+     # pwd
+     # cd "$path"/"$name"/"$2"/
+     # ls
+     # pwd
+     # cd $file
+     # cat Readme.md
+     # ls
       echo "Copied specific Directories"
     done
-      cd "$path"/"$name"/
-      ls 
-      pwd
-      git add .
-      git status
-      git commit -m "Added files"
-      git push https://Shankarsharm:"$1"@"$repo"
-      echo "Push Successful!!"
+    cd "$path"/"$name"/
+     # ls 
+     # pwd
+    git add .
+    git status
+    git commit -m "Added files"
+    git push https://Shankarsharm:"$1"@"$repo"
+    echo "Push Successful!!"
   fi
 done
