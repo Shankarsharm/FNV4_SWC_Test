@@ -3,6 +3,11 @@
   Branch: Jenkins
   lastbuild: cea7b5659fa576b50a083b32dcc6228462b1f2de
   Sync_dir: all
+- Name: FNV4_Comp_2nd
+  Repository: github.com/Shankarsharm/FNV4_Comp_2nd.git
+  Branch: Jenkins
+  lastbuild: cea7b5659fa576b50a083b32dcc6228462b1f2de
+  Sync_dir: src,test,bin
 - Name: FNV4_Comp_3rd
   Repository: github.com/Shankarsharm/FNV4_Comp_3rd.git
   Branch: Jenkins
