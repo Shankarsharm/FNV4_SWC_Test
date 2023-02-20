@@ -1,7 +1,8 @@
 #!/bin/bash
 
 len=$(yq "length" manifest.yml)
-
+path="/home/runner/work/"
+echo $path
 for ((i=0; i<${len}; i++))
 do
   cd "$3"/.github/runfiles
@@ -11,7 +12,7 @@ do
   branch=$(yq ".[$i].Branch" manifest.yml)
   Sync_dir=$(yq ".[$i].Sync_dir" manifest.yml)
   echo "$repo"
-  cd "$3"/..
+  cd "$path"
   pwd
   ls
   git clone -b $branch https://Shankarsharm:"$1"@"$repo"
