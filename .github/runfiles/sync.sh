@@ -33,7 +33,7 @@ do
     cd "$3"
     ls 
     pwd
-    rm -rf .git* ^FNV4*
+    rm -rf .git* FNV4_*
     ls
     cp -R . "$path"/"$name"/"$2"/
     echo $?
