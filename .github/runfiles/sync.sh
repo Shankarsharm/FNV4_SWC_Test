@@ -52,9 +52,12 @@ do
       cp -R "$file" "$path"/"$name"/"$2"/
       echo $?
       ls
+      pwd
       cd "$path"/"$name"/"$2"/
       ls
+      pwd
       cd $file
+      cat Readme.md
       ls
       echo "Copied specific Directories"
     done
