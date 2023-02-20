@@ -47,7 +47,6 @@ do
       file=$(echo $Sync_dir | cut -d "," -f"$j")
       echo "$file"
       cd "$3"
-      ls 
       pwd
       cp -R "$file" "$3"/../"$name"/
       echo $?
