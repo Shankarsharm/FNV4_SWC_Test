@@ -5,8 +5,10 @@ git config --global user.name "Shankar Sharma"
 len=$(yq "length" manifest.yml)
 path="/home/runner/work/"
 echo $path
+echo $len
 for ((i=0; i<${len}; i++))
 do
+  echo "For test"
   cd "$3"/.github/runfiles
   #Collecting Values from Yaml file
   repo=$(yq ".[$i].Repository" manifest.yml)
