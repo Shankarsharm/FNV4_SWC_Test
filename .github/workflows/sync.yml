@@ -34,11 +34,6 @@ jobs:
           ls
           pwd
           echo ${{ secrets.ACTIONS_KEY }}
-          git clone -b Jenkins https://Shankarsharm:${{ secrets.ACTIONS_KEY }}@github.com/Shankarsharm/FNV4_Comp1st.git
-          ls
-          pwd
-          cd FNV4_Comp1st
-          ls
       - name: Run Shell Script
         id: capture
         run: |
