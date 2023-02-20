@@ -33,9 +33,9 @@ do
     pwd
     rm -rf .git*
     ls
-    cp -R . "$3"/../"$name"/
+    cp -R . "$path"/"$name"/"$2"/
     echo $?
-    cd "$3"/../"$name"/
+    cd "$path"/"$name"/
     git add .
     git commit -m "Has added files"
     git push https://Shankarsharm:"$1"@"$repo"
@@ -49,11 +49,11 @@ do
       echo "$file"
       cd "$3"
       pwd
-      cp -R "$file" "$3"/../"$name"/
+      cp -R "$file" "$path"/"$name"/"$2"/
       echo $?
       echo "Copied specific Directories"
     done
-      cd "$3"/../"$name"/
+      cd "$path"/"$name"/
       ls 
       pwd
       git status
