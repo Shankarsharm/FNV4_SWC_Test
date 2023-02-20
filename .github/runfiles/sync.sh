@@ -39,6 +39,7 @@ do
       ls 
       pwd
       cp -R "$file" "$3"/../"$name"/"$2"
+      echo "Copied specific Directories"
     done
       cd "$3"/../"$name"
       ls 
@@ -48,5 +49,6 @@ do
       git status
       git commit -m "Added files"
       git push https://Shankarsharm:"$1"@"$repo"
+      echo "Push Successful!!"
   fi
 done
