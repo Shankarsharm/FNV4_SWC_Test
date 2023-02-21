@@ -43,4 +43,4 @@ jobs:
           ls
           pwd
           chmod +x sync.sh
-          ./sync.sh ${{ secrets.ACTIONS_KEY }} FNV4_SWC_Test $GITHUB_WORKSPACE
+          ./sync.sh ${{ secrets.ACTIONS_KEY }} ${{ github.event.repository.name }} $GITHUB_WORKSPACE
