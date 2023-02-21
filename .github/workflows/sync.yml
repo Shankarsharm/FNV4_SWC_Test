@@ -19,11 +19,13 @@ jobs:
           yq --version
       - name: clone repo
         run: |
+          echo ${{ github.event.repository.name }}
           pwd
           echo $GITHUB_WORKSPACE
           echo $GITHUB_ACTION_REPOSITORY
           echo ${{ github.repository }}
           echo ${{ github.action_path }}
+          
           cd ${{ github.action_repository }}
           ls
           cd work
