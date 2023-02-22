@@ -1,5 +1,6 @@
 FROM bitnami/git:latest
-COPY sync.sh manifest.yml .
+COPY sync.sh .
+COPY manifest.yml .
 RUN apt update
 RUN chmod +x sync.sh
 RUN wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
