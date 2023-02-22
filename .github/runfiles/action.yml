@@ -1,10 +1,15 @@
 name: 'Testing the SWpath'
 description: 'Syncronizing the repository'
 inputs:
-  Name:
-    description: 'Tell your name'
+  key:
+    description: 'Secrets'
     required: true
-    default: 'Shankar_Sharma'
+  repo_name:
+    description: 'Repository name'
+    required: true
+  path:
+    description: 'Workspace path'
+    required: true
 outputs:
   message:
     description: "This is the output"
@@ -12,4 +17,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.Name }}
+    - ${{ inputs.key }}
+    - ${{ inputs.repo_name }}
+    - ${{ inputs.path }}
