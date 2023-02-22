@@ -30,8 +30,10 @@ do
   else
     echo "Directory already present"
   fi
-  echo "$Sync_dir" | awk '{print tolower($0)}'
-  if [[ "$Sync_dir" | awk '{print tolower($0)}' == "all" ]]
+  
+  a=${Sync_dir,,}
+  echo $a
+  if [[ $a == "all" ]]
   then
     echo "yes copy everything"
     cd "$3"
