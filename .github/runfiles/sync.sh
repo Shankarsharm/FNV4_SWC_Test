@@ -2,7 +2,7 @@
 
 git config --global user.email "Shankarsharma@gmail.com"
 git config --global user.name "Shankar Sharma"
-len=$(yq "length" /actions/manifest.yml)
+len=$(yq "length" manifest.yml)
 path="/home/runner/work/"
 echo $path
 echo $len
@@ -11,10 +11,10 @@ do
   echo "For test"
   cd "$3"/.github/runfiles
   #Collecting Values from Yaml file
-  repo=$(yq ".[$i].Repository" /actions/manifest.yml)
-  name=$(yq ".[$i].Name" /actions/manifest.yml)
-  branch=$(yq ".[$i].Branch" /actions/manifest.yml)
-  Sync_dir=$(yq ".[$i].Sync_dir" /actions/manifest.yml)
+  repo=$(yq ".[$i].Repository" manifest.yml)
+  name=$(yq ".[$i].Name" manifest.yml)
+  branch=$(yq ".[$i].Branch" manifest.yml)
+  Sync_dir=$(yq ".[$i].Sync_dir" manifest.yml)
  # echo "$repo"
   cd "$path"
  # pwd
