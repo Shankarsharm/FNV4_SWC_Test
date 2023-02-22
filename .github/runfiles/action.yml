@@ -1,0 +1,15 @@
+name: 'Testing the SWpath'
+description: 'Syncronizing the repository'
+inputs:
+  Name:
+    description: 'Tell your name'
+    required: true
+    default: 'Shankar_Sharma'
+outputs:
+  message:
+    description: "This is the output"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.Name }}
