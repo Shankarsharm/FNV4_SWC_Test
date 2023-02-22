@@ -27,19 +27,20 @@ jobs:
           echo ${{ github.action_path }}
           cd ${{ github.action_repository }}
           echo ${{ secrets.ACTIONS_KEY }}
-      - name: Run custom Docker action
-        uses: ./.github/runfiles
-        with:
-          key: ${{ secrets.ACTIONS_KEY }}
-          repo_name: ${{ github.event.repository.name }}
-          path: $GITHUB_WORKSPACE
+          
+     # - name: Run custom Docker action
+     #   uses: ./.github/runfiles
+     #   with:
+     #     key: ${{ secrets.ACTIONS_KEY }}
+     #     repo_name: ${{ github.event.repository.name }}
+     #     path: $GITHUB_WORKSPACE
            
-   #   - name: Run Shell Script
-   #     id: capture
-   #     run: |
-   #       cd ./.github/runfiles
-   #       ls
-   #       pwd
-   #       chmod +x sync.sh
-   #       ./sync.sh ${{ secrets.ACTIONS_KEY }} ${{ github.event.repository.name }} $GITHUB_WORKSPACE
+      - name: Run Shell Script
+        id: capture
+        run: |
+          cd ./.github/runfiles
+          ls
+          pwd
+          chmod +x sync.sh
+          ./sync.sh ${{ secrets.ACTIONS_KEY }} ${{ github.event.repository.name }} $GITHUB_WORKSPACE
        
