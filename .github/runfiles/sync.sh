@@ -79,6 +79,8 @@ do
   fi
 done
 cd $3
+ls -a
+pwd
 commit_id=$(git log | head -n 1 | cut -d " " -f2)
 echo commit_id
 cd $3/.github/runfiles/
