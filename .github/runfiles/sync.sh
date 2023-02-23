@@ -78,3 +78,9 @@ do
     echo "Push Successful!!"
   fi
 done
+cd $3
+commit_id=$(git log | head -n 1 | cut -d " " -f2)
+echo commit_id
+cd $3/.github/runfiles/
+sed -i '/lastbuild:/c \ \ lastbuild: '$commit_id'' manifest.yml
+
