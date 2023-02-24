@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 jobs:
   Sync:
-    runs-on: [ShankarSharma, local]
+    runs-on: [self-hosted, local]
     steps:
       - name: Get Code
         uses: actions/checkout@v3
