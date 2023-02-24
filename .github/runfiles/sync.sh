@@ -39,9 +39,9 @@ do
     cd "$3"
    # ls 
    # pwd
-    rm -rf .git .lfsconfig .gitignore .gitattributes
+     rm -f .lfsconfig .gitignore .gitattributes
    # ls
-    cp -R . "$path"/"$name"/"$2"/
+    cp -R . | grep -v ".git" "$path"/"$name"/"$2"/
     echo $?
     cd "$path"/"$name"/
     git add .
@@ -85,4 +85,7 @@ commit_id=$(git log | head -n 1 | cut -d " " -f2)
 echo commit_id
 cd $3/.github/runfiles/
 sed -i '/lastbuild:/c \ \ lastbuild: '$commit_id'' manifest.yml
+git add manifest.yml
+git commit -m "updated manifest file"
+git push origin Jenkins
 
