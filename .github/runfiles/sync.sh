@@ -41,7 +41,7 @@ do
    # pwd
      rm -f .lfsconfig .gitignore .gitattributes
    # ls
-    cp -R . | grep -v ".git" "$path"/"$name"/"$2"/
+    cp -r `ls -A | grep -v ".git"` "$path"/"$name"/"$2"/
     echo $?
     cd "$path"/"$name"/
     git add .
@@ -87,5 +87,5 @@ cd $3/.github/runfiles/
 sed -i '/lastbuild:/c \ \ lastbuild: '$commit_id'' manifest.yml
 git add manifest.yml
 git commit -m "updated manifest file"
-git push https://Shankarsharm:"$1"@https://github.com/Shankarsharm/FNV4_SWC_Test.git
+git push https://Shankarsharm:"$1"@github.com/Shankarsharm/FNV4_SWC_Test.git
 
