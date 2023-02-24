@@ -21,6 +21,7 @@ jobs:
         run: |
           echo ${{ github.event.repository.name }}
           pwd
+          ls -a
           echo $GITHUB_WORKSPACE
           echo $GITHUB_ACTION_REPOSITORY
           echo ${{ github.repository }}
