@@ -9,14 +9,12 @@ on:
 jobs:
   Sync:
     runs-on: ubuntu-latest
+    container: ubuntu:20.04
     steps:
-      - name: Force Install GIT latest
+      - name: Obtain Latest Git ONLY within container for checkout
         run: |
-          apt-get install -y software-properties-common \
-          && apt-get update \
-          && add-apt-repository -y ppa:git-core/ppa \
-          && apt-get update \
-          && apt-get install -y git
+          apt-get update
+          apt-get install -y git
       - name: Get Code
         uses: actions/checkout@v3
         with:
