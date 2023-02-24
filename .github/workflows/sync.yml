@@ -19,11 +19,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Install yq
-        run: |
-          wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-          chmod a+x /usr/local/bin/yq
-          yq --version
+     # - name: Install yq
+     #   run: |
+     #     wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+      #    chmod a+x /usr/local/bin/yq
+      #    yq --version
       - name: clone repo
         run: |
           echo ${{ github.event.repository.name }}
