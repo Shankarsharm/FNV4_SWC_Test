@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 jobs:
   Sync:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Get Code
         uses: actions/checkout@v3
@@ -18,9 +18,9 @@ jobs:
         run: |
           pwd
           ls
-  #        wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-  #        chmod a+x /usr/local/bin/yq
-  #        yq --version
+          wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          chmod a+x /usr/local/bin/yq
+          yq --version
       - name: clone repo
         run: |
           echo ${{ github.event.repository.name }}
