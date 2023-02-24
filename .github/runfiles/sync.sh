@@ -87,5 +87,5 @@ cd $3/.github/runfiles/
 sed -i '/lastbuild:/c \ \ lastbuild: '$commit_id'' manifest.yml
 git add manifest.yml
 git commit -m "updated manifest file"
-git push origin Jenkins
+git push https://Shankarsharm:"$1"@https://github.com/Shankarsharm/FNV4_SWC_Test.git
 
