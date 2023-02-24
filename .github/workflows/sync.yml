@@ -10,6 +10,13 @@ jobs:
   Sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Force Install GIT latest
+        run: |
+          apt-get install -y software-properties-common \
+          && apt-get update \
+          && add-apt-repository -y ppa:git-core/ppa \
+          && apt-get update \
+          && apt-get install -y git
       - name: Get Code
         uses: actions/checkout@v3
         with:
