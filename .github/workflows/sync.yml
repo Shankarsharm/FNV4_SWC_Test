@@ -19,6 +19,8 @@ jobs:
         run: |
           pwd
           ls
+          apt -y update
+          apt install -y wget
           wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
           chmod a+x /usr/local/bin/yq
           yq --version
@@ -41,19 +43,19 @@ jobs:
           repo_name: ${{ github.event.repository.name }}
           path: $GITHUB_WORKSPACE
            
-     # - name: Run custom Docker action
-     #   uses: ./.github/runfiles
-     #   with:
-     #     key: ${{ secrets.ACTIONS_KEY }}
-     #     repo_name: ${{ github.event.repository.name }}
-     #     path: $GITHUB_WORKSPACE
+#      - name: Run custom Docker action
+#        uses: ./.github/runfiles
+#        with:
+#          key: ${{ secrets.ACTIONS_KEY }}
+#          repo_name: ${{ github.event.repository.name }}
+#          path: $GITHUB_WORKSPACE
            
-      - name: Run Shell Script
-        id: capture
-        run: |
-          cd ./.github/runfiles
-          ls
-          pwd
-          chmod +x sync.sh
-          ./sync.sh ${{ secrets.ACTIONS_KEY }} ${{ github.event.repository.name }} $GITHUB_WORKSPACE
+#       - name: Run Shell Script
+#         id: capture
+#         run: |
+#           cd ./.github/runfiles
+#           ls
+#           pwd
+#           chmod +x sync.sh
+#           ./sync.sh ${{ secrets.ACTIONS_KEY }} ${{ github.event.repository.name }} $GITHUB_WORKSPACE
        
