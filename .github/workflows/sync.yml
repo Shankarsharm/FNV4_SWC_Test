@@ -33,6 +33,13 @@ jobs:
           cd ${{ github.action_repository }}
           echo ${{ secrets.ACTIONS_KEY }}
           
+      - name: Run actions from release
+        uses: Shankarsharm/Custom_action_workflow@v0.1
+        with:
+          key: ${{ secrets.ACTIONS_KEY }}
+          repo_name: ${{ github.event.repository.name }}
+          path: $GITHUB_WORKSPACE
+           
      # - name: Run custom Docker action
      #   uses: ./.github/runfiles
      #   with:
