@@ -48,7 +48,6 @@ jobs:
 #        with:
 #          key: ${{ secrets.ACTIONS_KEY }}
 #          repo_name: ${{ github.event.repository.name }}
-#          path: $GITHUB_WORKSPACE
            
 #       - name: Run Shell Script
 #         id: capture
