@@ -1,0 +1,15 @@
+- Name: FNV4_Comp1st
+  Repository: github.com/Shankarsharm/FNV4_Comp1st.git
+  Branch: Jenkins
+  lastbuild: a6891ed7709dee46858516ab5de0efa4c85d8a99
+  Sync_dir: src,test,bin
+- Name: FNV4_Comp_2nd
+  Repository: github.com/Shankarsharm/FNV4_Comp_2nd.git
+  Branch: Jenkins
+  lastbuild: a6891ed7709dee46858516ab5de0efa4c85d8a99
+  Sync_dir: all
+- Name: FNV4_Comp_3rd
+  Repository: github.com/Shankarsharm/FNV4_Comp_3rd.git
+  Branch: Jenkins
+  lastbuild: a6891ed7709dee46858516ab5de0efa4c85d8a99
+  Sync_dir: doc,model
