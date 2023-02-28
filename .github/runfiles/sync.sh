@@ -59,8 +59,8 @@ do
     for ((j=1; j<=${dir}+1; j++))
     do
       file=$(echo $Sync_dir | cut -d "," -f"$j")
-      echo "$file"/"$2"/
-      cd "$path"
+      echo "$file"
+      cd "$path"/"$2"/
      # pwd
       cp -R "$file" "$path"/"$name"/"$2"/
       echo $?
