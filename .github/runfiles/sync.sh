@@ -42,7 +42,7 @@ do
   if [[ $a == "all" ]]
   then
     echo "yes copy everything"
-    cd "$path"
+    cd "$path"/"$2"/
    # ls 
    # pwd
      rm -f .lfsconfig .gitignore .gitattributes
@@ -59,7 +59,7 @@ do
     for ((j=1; j<=${dir}+1; j++))
     do
       file=$(echo $Sync_dir | cut -d "," -f"$j")
-      echo "$file"
+      echo "$file"/"$2"/
       cd "$path"
      # pwd
       cp -R "$file" "$path"/"$name"/"$2"/
