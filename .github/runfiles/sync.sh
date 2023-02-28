@@ -6,8 +6,8 @@ cd /actions/
 ls
 pwd
 len=$(yq "length" /actions/manifest.yml)
-#path="/github/workspace/"
-#echo $path
+path="/actions/"
+echo $path
 echo $len
 git clone -b Jenkins https://Shankarsharm:"$1"@github.com/Shankarsharm/FNV4_SWC_Test.git
 ls 
@@ -15,14 +15,13 @@ pwd
 for ((i=0; i<${len}; i++))
 do
   echo "For test"
-  cd /actions/
+  cd "$path"
   #Collecting Values from Yaml file
   repo=$(yq ".[$i].Repository" /actions/manifest.yml)
   name=$(yq ".[$i].Name" /actions/manifest.yml)
   branch=$(yq ".[$i].Branch" /actions/manifest.yml)
   Sync_dir=$(yq ".[$i].Sync_dir" /actions/manifest.yml)
  # echo "$repo"
- # cd "$path"
   pwd
   ls
   
@@ -48,7 +47,7 @@ do
    # pwd
      rm -f .lfsconfig .gitignore .gitattributes
    # ls
-    cp -r `ls -A | grep -v ".git"` /actions/"$name"/"$2"/
+    cp -r `ls -A | grep -v ".git"` "$path"/"$name"/"$2"/
     echo $?
     cd "$path"/"$name"/
     git add .
@@ -63,7 +62,7 @@ do
       echo "$file"
       cd "$path"
      # pwd
-      cp -R "$file" /actions/"$name"/"$2"/
+      cp -R "$file" "$path"/"$name"/"$2"/
       echo $?
      # ls
      # pwd
@@ -75,7 +74,7 @@ do
      # ls
       echo "Copied specific Directories"
     done
-    cd /actions/"$path"/"$name"/
+    cd "$path"/"$name"/
      # ls 
      # pwd
     git add .
